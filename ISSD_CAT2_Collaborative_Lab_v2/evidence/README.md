@@ -1,0 +1,1 @@
+This directory is for instructions only. Keep genuine screenshots, reports and secrets in the designated private shared group evidence drive. Do not automatically commit those to GitHub. The project deliberately contains NO evidence or vulnerability scan results yet.

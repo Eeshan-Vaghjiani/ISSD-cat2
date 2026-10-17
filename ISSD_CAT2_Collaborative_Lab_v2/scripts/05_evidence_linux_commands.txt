@@ -1,0 +1,16 @@
+Run in PowerShell INSIDE the folder containing Vagrantfile (two distinct tests):
+
+vagrant status
+vagrant ssh ubuntu -c "hostname; cat /etc/os-release; ip -br -4 addr; systemctl status nginx --no-pager"
+vagrant ssh debian -c "hostname; cat /etc/os-release; ip -br -4 addr; systemctl status apache2 --no-pager"
+
+When the Wazuh agent is chosen and installed, use:
+vagrant ssh ubuntu -c "sudo systemctl status wazuh-agent --no-pager"
+vagrant ssh debian -c "sudo systemctl status wazuh-agent --no-pager"
+
+For network scan readiness (not proof of a vulnerability):
+Test-NetConnection 192.168.56.11 -Port 80
+Test-NetConnection 192.168.56.12 -Port 80
+
+Save screenshot files to your shared evidence folder with VM name and date.
+Do not invent agent/running status from the screenshots. Ensure actual commands succeed.

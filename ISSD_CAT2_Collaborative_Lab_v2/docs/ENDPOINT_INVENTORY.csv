@@ -1,0 +1,4 @@
+VM_Name,Expected_Hostname,OS,Expected_Host_Only_IP,Actual_Hostname,Actual_OS_Version,Actual_Private_IP,Agent_Name,Agent_Version,Agent_Installed,Service_Running,Service_Evidence_File,Manager_Registration_Status,Notes
+ISSD-CAT2-ubuntu,issd-ubuntu,Ubuntu Server 24.04,192.168.56.11,,,,,,,,,,
+ISSD-CAT2-debian,issd-debian,Debian 12,192.168.56.12,,,,,,,,,,
+ISSD-CAT2-windows,issd-windows,Windows 11 Enterprise Evaluation,192.168.56.13,,,,,,,,,,

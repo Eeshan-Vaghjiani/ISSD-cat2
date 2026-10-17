@@ -1,0 +1,30 @@
+# Machine state and VM disks must NEVER be pushed to GitHub
+.vagrant/
+*.vdi
+*.vmdk
+*.ova
+*.ovf
+*.box
+*.iso
+*.vbox
+*.sav
+*.vbox-prev
+
+# Secrets, registrations, tokens, logs and generated data
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.token
+*password*
+*credentials*
+logs/
+artifacts-private/
+*.zip
+
+# Evidence may contain host-identifying information: use shared evidence drive, not repo
+evidence/screenshots/
+evidence/reports/
+evidence/exports/
