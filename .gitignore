@@ -28,3 +28,4 @@ artifacts-private/
 evidence/screenshots/
 evidence/reports/
 evidence/exports/
+*.msi 
