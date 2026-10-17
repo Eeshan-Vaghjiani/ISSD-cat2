@@ -29,3 +29,14 @@ evidence/screenshots/
 evidence/reports/
 evidence/exports/
 *.msi 
+
+# Local machine data and generated files
+/VagrantHome/
+/VMs/
+/Downloads/
+/SharedExports/
+/LabRepo/
+/Evidence/*
+!/Evidence/README.md
+/evidence/*
+!/evidence/README.md
