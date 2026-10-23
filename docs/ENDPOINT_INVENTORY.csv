@@ -1,4 +1,4 @@
 VM_Name,Expected_Hostname,OS,Expected_Host_Only_IP,Actual_Hostname,Actual_OS_Version,Actual_Private_IP,Agent_Name,Agent_Version,Agent_Installed,Service_Running,Service_Evidence_File,Manager_Registration_Status,Notes
-ISSD-CAT2-ubuntu,issd-ubuntu,Ubuntu Server 24.04,192.168.56.11,,,,,,,,,,
-ISSD-CAT2-debian,issd-debian,Debian 12,192.168.56.12,,,,,,,,,,
-ISSD-CAT2-windows,issd-windows,Windows 11 Enterprise Evaluation,192.168.56.13,,,,,,,,,,
+ISSD-CAT2-ubuntu,issd-ubuntu,Ubuntu Server 24.04,192.168.56.11,issd-ubuntu,Ubuntu 24.04.3 LTS,192.168.56.11,Wazuh Agent,4.14.9-1,Yes,No,M4-05_Ubuntu_Agent_Installed.png,Not enrolled,Manager address remains MANAGER_IP
+ISSD-CAT2-debian,issd-debian,Debian 12,192.168.56.12,issd-debian,Debian GNU/Linux 12,192.168.56.12,Wazuh Agent,4.14.9-1,Yes,Not verified,M4-06_Debian_Agent_Installed.png,Not enrolled,Service enabled and awaiting manager configuration
+ISSD-CAT2-windows,issd-windo,Windows 11 Enterprise Evaluation,192.168.56.13,,Windows 11 Enterprise Evaluation,192.168.56.13,Wazuh Agent,4.14.9,Yes,No,M4-07B_Windows_Agent_Service_Status.png,Not enrolled,Windows service stopped pending manager configuration
