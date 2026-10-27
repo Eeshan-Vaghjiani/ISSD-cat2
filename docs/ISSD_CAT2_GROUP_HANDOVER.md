@@ -1,5 +1,7 @@
 # ISSD CAT 2 — Group Handover and Setup Guide
 
+> **Historical 23 October setup guide:** For actual progress use [CURRENT_STATUS.md](CURRENT_STATUS.md). Later evidence shows completed network scans, three active Wazuh agents and cloud findings. Pending statuses and GitHub file listings below are historical. OVA export dates/enrollment state have not been revalidated; do not distribute clones of enrolled identities. For the current import launcher use [SETUP.md](../SETUP.md).
+
 **Updated:** 23 October 2026  
 **Repository:** https://github.com/Eeshan-Vaghjiani/ISSD-cat2  
 **Default branch:** `master`  

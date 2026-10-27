@@ -1,6 +1,8 @@
 # ISSD CAT 2: Shared Vulnerability Assessment Lab (Group of Six)
 
-**STATUS (17 October 2026): Three endpoint operating systems installed; baseline networking verified by the lab operator.** Ubuntu 24.04 and Debian 12 were confirmed through Vagrant logs, service checks and successful TCP/ping tests. The operator confirms Windows 11 was installed, can reach both Linux web services and has a `baseline-before-agent` snapshot. No vulnerability agent has been installed or checked in yet. Agent manager, cloud synchronization, vulnerability results and final demonstration remain outstanding. Every evidence entry must be captured from real successful tests.
+**STATUS (27 October 2026 evidence review):** Three endpoints, three completed OpenVAS scans, and three active Wazuh 4.14.9 agents are evidenced locally. Wazuh uses a local worker and Oracle Cloud master over Tailscale; cloud vulnerability records exist. This is historical screenshot/report evidence, not a live health check. See [current status and remaining screenshots](docs/CURRENT_STATUS.md), [topology](docs/NETWORK_TOPOLOGY.md) and [Task 2 findings](docs/Task2_Findings.md). Greenbone feed readiness, stronger synchronization proof and the live demonstration still need confirmation.
+
+**Teammates:** Start with [SETUP.md](SETUP.md) to import prepared Linux OVAs without Vagrant. Clean builds below create endpoints **without Wazuh**. GitHub stores instructions, not the running lab or private evidence.
 
 ## What you will build
 - VirtualBox **VM 1**: Ubuntu Server 24.04 LTS, `ISSD-CAT2-ubuntu`, IP `192.168.56.11`, 2 GB RAM, port 80 Nginx.
@@ -17,8 +19,8 @@ The original lecturer brief suggests Windows, Linux, Metasploitable/OWASP BWA bu
 4. In PowerShell, inside project folder: `vagrant validate` then `vagrant up ubuntu --provider=virtualbox`, then `vagrant up debian --provider=virtualbox`. Start *one at a time*.
 5. Read `docs/03_LINUX_VAGRANT_STEP_BY_STEP.md` and save verified Linux evidence.
 6. Read `docs/04_WINDOWS11_STEP_BY_STEP.md`, download Microsoft ISO and create Windows VM. It does not need a Vagrant box.
-7. Read `docs/05_MEMBER4_AGENTS_AND_EVIDENCE.md`: agent installation is gated on agreeing the platform with Member 5 and lecturer, because cloud/local management is a marking requirement.
-8. Read `docs/06_GITHUB_AND_GROUP_HANDOVER.md` and request an invitation to this private repository: `https://github.com/Eeshan-Vaghjiani/ISSD-cat2` (default branch `master`). GitHub stores **instructions**, not running VMs or license-restricted images.
+7. Existing endpoints already have Wazuh agents. Read `docs/M4-11_Handover_to_M5.md` and `docs/CURRENT_STATUS.md`; do not reinstall or clone enrolled identities. Lecturer acceptance of Wazuh and the local/cloud interpretation still needs confirmation.
+8. Read `docs/06_GITHUB_AND_GROUP_HANDOVER.md`; repository: `https://github.com/Eeshan-Vaghjiani/ISSD-cat2` (default branch `master`). Treat it as public unless its visibility is confirmed otherwise. GitHub stores **instructions**, not running VMs or license-restricted images.
 9. Test the demo using `docs/07_DEMO_AND_EXPLANATIONS.md`, `docs/08_GROUP_CHECKLIST.csv`, and `docs/09_TROUBLESHOOTING.md`.
 
 ## Download links

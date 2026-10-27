@@ -1,18 +1,18 @@
 Member,Deliverable,Owner,Status,Evidence_Location,Verified_By
-1,Topology diagram and 3 endpoints,Member 1,NOT STARTED,,
-1,IP inventory and network reachability,Member 1,NOT STARTED,,
-2,Network scanner deployed/targets,Member 2,NOT STARTED,,
-2,Working network scan policy/feeds,Member 2,NOT STARTED,,
-3,Network scan output each target,Member 3,NOT STARTED,,
-3,Exported vulnerability findings and explanations,Member 3,NOT STARTED,,
-4,Three agent compatible VMs booted,Member 4,NOT STARTED,,
-4,Agent running on Ubuntu,Member 4,NOT STARTED,,
-4,Agent running on Debian,Member 4,NOT STARTED,,
-4,Agent running on Windows,Member 4,NOT STARTED,,
-4,OS hostname IP agent inventory,Member 4,NOT STARTED,,
-5,Approved platform and licensing,Member 5,NOT STARTED,,
-5,Local correlation/cloud synchronization proof,Member 5,NOT STARTED,,
-5,Three agents registered and checked in,Member 5,NOT STARTED,,
-6,Agent vulnerability findings across 3 endpoints,Member 6,NOT STARTED,,
-6,Network-vs-agent comparison and full demo,Member 6,NOT STARTED,,
-Group,Confirm date/time and tool acceptance,All,NOT STARTED,,
+1,Topology diagram and 3 endpoints,Member 1,EVIDENCE PRESENT,docs/NETWORK_TOPOLOGY.md,2026-10-27 file review; not live
+1,IP inventory and network reachability,Member 1,EVIDENCE PRESENT,Evidence/Member1,2026-10-27 file review; not live
+2,Network scanner deployed/targets,Member 2,EVIDENCE PRESENT,Evidence/Member2,2026-10-27 file review; not live
+2,Working network scan policy/feeds,Member 2,REFRESH READINESS; FINAL DASHBOARD SYNCING,docs/CURRENT_STATUS.md,2026-10-27 screenshot review
+3,Network scan output each target,Member 3,EVIDENCE PRESENT,Evidence/Member3,2026-10-27 evidence review
+3,Exported vulnerability findings and explanations,Member 3,SUMMARY PRESENT; REHEARSE,docs/Task1_Findings_and_Demo_Notes.md,2026-10-27 documentation review
+4,Three agent compatible VMs booted,Member 4,EVIDENCE PRESENT,Evidence/Member4,2026-10-27 file review; not live
+4,Agent running on Ubuntu,Member 4,MANAGER ACTIVE; LOCAL SERVICE CAPTURE PENDING,Evidence/Member4/M4-07_Three_Active_Endpoint_Agents.png,2026-10-26 evidence reviewed 2026-10-27
+4,Agent running on Debian,Member 4,MANAGER ACTIVE; LOCAL SERVICE CAPTURE PENDING,Evidence/Member4/M4-07_Three_Active_Endpoint_Agents.png,2026-10-26 evidence reviewed 2026-10-27
+4,Agent running on Windows,Member 4,MANAGER ACTIVE; LOCAL SERVICE CAPTURE PENDING,Evidence/Member4/M4-07_Three_Active_Endpoint_Agents.png,2026-10-26 evidence reviewed 2026-10-27
+4,OS hostname IP agent inventory,Member 4,UPDATED FROM EVIDENCE,docs/ENDPOINT_INVENTORY.csv,2026-10-27 file review
+5,Approved platform and licensing,Member 5,LECTURER APPROVAL NOT RECORDED,docs/CURRENT_STATUS.md,
+5,Local correlation/cloud synchronization proof,Member 5,CLUSTER EVIDENCE PRESENT; FRESH SYNC PROOF PENDING,Evidence/Member5,2026-10-27 screenshot review
+5,Three agents registered and checked in,Member 5,EVIDENCE PRESENT,Evidence/Member5/M5-14_Agent_Registration_Synced_Cloud.png,2026-10-26 evidence reviewed 2026-10-27
+6,Agent vulnerability findings across 3 endpoints,Member 6,COUNTS EVIDENCED; DEBIAN CVE ROW PENDING,docs/Task2_Findings.md,2026-10-27 screenshot review
+6,Network-vs-agent comparison and full demo,Member 6,COMPARISON WRITTEN; LIVE DEMO PENDING,docs/Task2_Findings.md,2026-10-27 documentation review
+Group,Confirm date/time and tool acceptance,All,CONFIRM WITH LECTURER,docs/CURRENT_STATUS.md,

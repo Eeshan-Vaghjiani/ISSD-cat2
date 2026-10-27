@@ -1,0 +1,2 @@
+# Preserve PDF byte offsets; Windows line-ending conversion can corrupt ASCII PDFs.
+*.pdf binary

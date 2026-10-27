@@ -7,26 +7,24 @@
 - Windows requires a one-time Microsoft ISO install on the colleague's laptop **or** a permitted offline VM transfer, if allowed. Not automated by our Vagrantfile.
 - Members can make changes with Git branches/pull requests. Your running VMs never silently synchronize when someone pushes code.
 
-## A. Create private GitHub repository
-1. GitHub > New repository > name `issd-cat2-distributed-va` > choose **Private** > create empty repository (no README because project includes one).
-2. Extract ZIP to your SSD `X:\ISSD_CAT2\LabRepo\ISSD_CAT2_Collaborative_Lab_v2`.
-3. Install Git for Windows if not installed. In PowerShell inside that folder:
+## A. Use the existing repository
+
+The repository already exists at `https://github.com/Eeshan-Vaghjiani/ISSD-cat2`, branch **master**. Do not run `git init`, rename the branch or create a replacement repository. Treat it as public unless visibility is confirmed otherwise. For current progress read `docs/CURRENT_STATUS.md`.
+
+On a teammate's laptop:
+
 ```powershell
-git init
-git add .
-git commit -m "Create shared ISSD CAT2 lab baseline"
-git branch -M main
-git remote add origin https://github.com/YOUR_USERNAME/issd-cat2-distributed-va.git
-git push -u origin main
+git clone https://github.com/Eeshan-Vaghjiani/ISSD-cat2.git
+cd ISSD-cat2
 ```
-Replace YOUR_USERNAME. Authentication via GitHub browser/credential helper or GitHub CLI; do NOT put a password or token inside files.
-4. GitHub repo > Settings > Collaborators > Add people > invite five classmates. They accept invitations.
+
+The owner's remote is named `ISSD-cat2`; a fresh clone normally uses `origin`. Check `git remote -v` before pulling/pushing. Use the credential helper or GitHub CLI, never a token embedded in a file. The owner can invite collaborators in repository settings. Review staged files before committing; never stage VM folders or unredacted evidence.
 
 ## B. Member 1 workflow (her own laptop)
 1. Install VirtualBox, Vagrant, Git.
 2. Configure SATA/other drive storage as desired with script (she sets her own drive letter).
-3. `git clone https://github.com/YOUR_USERNAME/issd-cat2-distributed-va.git`
-4. `cd issd-cat2-distributed-va`
+3. `git clone https://github.com/Eeshan-Vaghjiani/ISSD-cat2.git`
+4. `cd ISSD-cat2`
 5. `vagrant up ubuntu --provider=virtualbox`
 6. `vagrant up debian --provider=virtualbox`
 7. Use `docs/04_WINDOWS11_STEP_BY_STEP.md` for Windows if she needs it on her own laptop, or use the single authoritative Windows machine for the demo.
@@ -35,7 +33,7 @@ Replace YOUR_USERNAME. Authentication via GitHub browser/credential helper or Gi
 ## C. Work without accidental overwrites
 - Create a GitHub Issue per deliverable (e.g. `M4 verify three running agents`, `M1 topology`); assign an owner.
 - Member-specific branches: `m1-topology`, `m4-endpoints`, `m5-manager`, etc.
-- Before edits, `git pull origin main`. Submit pull requests, have another member review, merge to main.
+- Before edits, `git pull --ff-only origin master` on a fresh clone (owner uses remote `ISSD-cat2`). Submit pull requests, have another member review, merge to `master`. Never force-push shared work.
 - Changes to Vagrantfile should be approved by both Members 1 and 4 to avoid breaking shared infrastructure.
 - Put screenshots/results in the shared Google Drive folder (`ISSD CAT2 / Member 1 ... Member 6 / Shared Demo`); link those folders in GitHub documentation if permitted.
 - Do NOT commit passwords, API keys, registration keys, unredacted host data or Windows licensed images.

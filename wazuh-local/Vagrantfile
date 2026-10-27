@@ -1,0 +1,19 @@
+# Clean local-worker VM recipe only: does not install Wazuh, Tailscale or cloud integration.
+# Preserve the existing configured VM and enrolled identities; do not recreate it for evidence.
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-24.04"
+  config.vm.hostname = "issd-wazuh-local"
+
+  # Same host-only network as the three endpoints
+  config.vm.network "private_network", ip: "192.168.56.30"
+
+  # Keep project files separate from the VM
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "ISSD-CAT2-wazuh-local"
+    vb.memory = 3072
+    vb.cpus = 2
+    vb.gui = false
+  end
+end

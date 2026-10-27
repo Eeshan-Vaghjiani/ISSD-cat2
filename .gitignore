@@ -40,3 +40,8 @@ evidence/exports/
 !/Evidence/README.md
 /evidence/*
 !/evidence/README.md
+/ISSD_Private_Keys/
+
+# Raw scan exports and local inventory backups are not publication material
+/Reports/
+*.backup.csv

@@ -1,0 +1,25 @@
+digraph Task1 {
+  graph [bgcolor="white", fontname="DejaVu Sans", rankdir="TB", nodesep=0.65, ranksep=0.75, pad=0.32, splines=ortho, outputorder=edgesfirst];
+  node [fontname="DejaVu Sans", fontsize=15, style="filled,rounded", shape=box, color="#d4dce6", fillcolor="#f9fbfd", fontcolor="#172b42", penwidth=1.7, margin="0.23,0.14"];
+  edge [fontname="DejaVu Sans", fontsize=11, color="#4b657f", penwidth=2.0, arrowsize=0.8];
+
+  subgraph cluster_host {
+    label="WINDOWS 11 LAPTOP  |  Oracle VirtualBox  |  16 GB host RAM";
+    labelloc="t"; labeljust="l"; fontsize=19; fontcolor="#23384f"; color="#bcc9d7"; style="rounded"; bgcolor="#f5f8fc";
+    Browser [label="HOST BROWSER  /  Greenbone Web UI\nhttps://localhost:8443\nSSH forward to scanner HTTPS", fillcolor="#e7f0ff", color="#90b8ee"];
+    Scanner [label="SCANNER VM  |  Ubuntu Server\nISSD-CAT2-scanner\n192.168.56.20\nOpenVAS + gvmd + GSA + PostgreSQL", fillcolor="#d8ebff",color="#599ddd", penwidth=2.2];
+    HostNet [shape=ellipse, label="VIRTUALBOX HOST-ONLY NETWORK\n192.168.56.0/24", fillcolor="#deefe8",color="#70ae99",fontsize=16];
+    {rank=same; Ubuntu; Debian; Windows;}
+    Ubuntu [label="ENDPOINT 1\nUbuntu Server 24.04\nISSD-CAT2-ubuntu\n192.168.56.11\nNginx HTTP + SSH", fillcolor="#ffffff", color="#96aaba"];
+    Debian [label="ENDPOINT 2\nDebian 12\nISSD-CAT2-debian\n192.168.56.12\nApache HTTP + SSH", fillcolor="#ffffff", color="#96aaba"];
+    Windows [label="ENDPOINT 3\nWindows 11 Enterprise Eval\nISSD-CAT2-windows\n192.168.56.13", fillcolor="#ffffff", color="#96aaba"];
+
+    Browser -> Scanner [label="HTTPS dashboard (SSH tunnel)", color="#678de5", fontsize=10];
+    Scanner -> HostNet [label="Remote / agentless\nvulnerability probes", color="#2d987d"];
+    HostNet -> Ubuntu [color="#2d987d"];
+    HostNet -> Debian [color="#2d987d"];
+    HostNet -> Windows [color="#2d987d"];
+  }
+  WAN [label="NAT INTERNET ACCESS  |  package/feed updates only\nNAT is NOT the endpoint scan path", fontsize=11, fillcolor="#faf4e8",color="#d7ba7d"];
+  Scanner -> WAN [style=dashed, color="#c09b54", constraint=false];
+}

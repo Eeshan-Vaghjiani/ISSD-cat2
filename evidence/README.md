@@ -1,1 +1,26 @@
-This directory is for instructions only. Keep genuine screenshots, reports and secrets in the designated private shared group evidence drive. Do not automatically commit those to GitHub. The project deliberately contains NO evidence or vulnerability scan results yet.
+# Private evidence index
+
+Reviewed 27 October 2026. Genuine screenshots and reports exist locally under `Evidence/Member1` through `Evidence/Member6`; they are deliberately excluded from Git. GitHub holds sanitized summaries, not the raw evidence. Keep originals and `Evidence.zip` private.
+
+| Folder | Contents / interpretation |
+|---|---|
+| Member1 | OS/IP identity, topology and scanner-to-three-endpoint connectivity |
+| Member2 | Scanner setup, feeds, targets, tasks, 140G root filesystem and running containers |
+| Member3 | Three original OpenVAS PDF reports; 2 Critical + 5 Low displayed findings |
+| Member4 | Agent installation history plus later three-active-agent proof; updated inventory |
+| Member5 | Local/cloud Wazuh nodes, Tailscale, cluster, Filebeat and cloud inventory evidence |
+| Member6 | Vulnerability dashboard summaries, endpoint summaries, advisories and report drafts |
+
+## Final submission references
+
+- Current gaps and exact capture instructions: `docs/CURRENT_STATUS.md`.
+- Current topology: `docs/NETWORK_TOPOLOGY.md`. `M4-09_Topology.png` is a historical pre-manager diagram, **not final architecture**.
+- Current endpoint record: `docs/ENDPOINT_INVENTORY.csv`; private mirror: `Member4/M4-10_Endpoint_Inventory.csv`.
+- Task 1 explanation: `docs/Task1_Findings_and_Demo_Notes.md`.
+- Canonical Task 2 report: `docs/Task2_Findings.md`. Both original Member6 Markdown reports are retained as superseded drafts, not two final reports.
+- `Member4/M4-02_Ubuntu_OS_IP.png` actually shows a **physical Windows host-to-Ubuntu TCP/80 test**. It is not Ubuntu OS/IP evidence. Use `Member1/M1-11_Ubuntu_OS_and_IP_LIVE.png` for that purpose.
+- `M6-02` through `M6-04` show OS-filtered dashboard summaries, not individual CVE inventory rows. Original filenames are retained for traceability; use these corrected captions.
+- `M6-08_Ubuntu_CVE_Record.png` and `M6-08_Debian_CVE_Record.png` are **public advisory pages**, not endpoint vulnerability records.
+- `Member2/M2-12_Final_Greenbone_Dashboard.png` shows completed tasks **and a feed-sync warning**. It does not prove readiness for a new scan.
+
+Do not publish credentials, private keys, enrollment tokens, infrastructure secrets or raw scan exports. Do not alter screenshots to make pending checks look successful.

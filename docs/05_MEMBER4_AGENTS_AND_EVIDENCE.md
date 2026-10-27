@@ -1,5 +1,7 @@
 # 05. Member 4: agent installations and evidence
 
+> **Existing lab, 27 October:** Agents are already installed and enrolled; do not repeat installation/enrollment. Use [M4-11_Handover_to_M5.md](M4-11_Handover_to_M5.md) and [CURRENT_STATUS.md](CURRENT_STATUS.md) for current evidence and the three remaining local-service captures. The instructions and proposed filenames below are for new clean endpoints only.
+
 Your allocation requires: 3 agent-compatible systems; endpoint agent installed on all 3; service verified on all 3; hostname/IP/OS inventory; handover to Member 5 for enrollment. This does not mean you must run the engine or generate vulnerability reports by yourself. Member 5 handles engine/registration and Member 6 findings.
 
 ## Before agents: obtain one architecture decision

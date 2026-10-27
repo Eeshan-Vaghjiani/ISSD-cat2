@@ -1,0 +1,17 @@
+# ISSD CAT 2 - Task 1 dedicated vulnerability scanner.
+# Independent of the root Vagrantfile: does NOT change Ubuntu/Debian targets.
+Vagrant.configure("2") do |config|
+  config.vm.box = "bento/ubuntu-24.04"
+  config.vm.box_architecture = "amd64"
+  config.vm.box_check_update = false
+  config.vm.hostname = "issd-scanner"
+  config.vm.boot_timeout = 600
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.network "private_network", ip: "192.168.56.20"
+  config.vm.provider "virtualbox" do |vb|
+    vb.name = "ISSD-CAT2-scanner"
+    vb.memory = 6144
+    vb.cpus = 1
+    vb.gui = false
+  end
+end
