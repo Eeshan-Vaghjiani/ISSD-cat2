@@ -1,6 +1,6 @@
 # ISSD CAT 2: Shared Vulnerability Assessment Lab (Group of Six)
 
-**STATUS (27 October 2026 evidence review):** Three endpoints, three completed OpenVAS scans, and three active Wazuh 4.14.9 agents are evidenced locally. Wazuh uses a local worker and Oracle Cloud master over Tailscale; cloud vulnerability records exist. This is historical screenshot/report evidence, not a live health check. See [current status and remaining screenshots](docs/CURRENT_STATUS.md), [topology](docs/NETWORK_TOPOLOGY.md) and [Task 2 findings](docs/Task2_Findings.md). Greenbone feed readiness, stronger synchronization proof and the live demonstration still need confirmation.
+**STATUS (27 October 2026 live checks):** Direct running-service screenshots now exist for all three endpoints. Greenbone's loaded feeds, ready dashboard, three completed scans and task policies were verified. A benign Debian test event was processed by the local Wazuh worker and retrieved from the cloud index; worker NTP was corrected and verified. See [live results](docs/LIVE_CHECKS_2026-10-27.md), [current status](docs/CURRENT_STATUS.md), [topology](docs/NETWORK_TOPOLOGY.md) and [Task 2 findings](docs/Task2_Findings.md). These are dated observations, not continuous uptime. Lecturer acceptance and the full group demonstration still need confirmation.
 
 **Teammates:** Start with [SETUP.md](SETUP.md) to import prepared Linux OVAs without Vagrant. Clean builds below create endpoints **without Wazuh**. GitHub stores instructions, not the running lab or private evidence.
 

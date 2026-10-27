@@ -35,7 +35,7 @@ The PDFs report **QoD >= 70**, omit `Log`, `Debug` and `False Positive` findings
 2. **Member 1 (optional):** VirtualBox screenshot with all four relevant VM entries including `ISSD-CAT2-scanner`, not just three endpoints.
 3. **Member 2 - now present:** `Member2/M2-10_Final_Scanner_Storage.png` shows the 140G root filesystem.
 4. **Member 2 - now present:** `Member2/M2-11_Greenbone_Containers_Healthy.png` shows Compose services Up/healthy where checks exist.
-5. **Member 2 - still required:** `M2-12_Final_Greenbone_Dashboard.png` shows three Done tasks but says feeds syncing / scans unavailable. Capture ready-feed status and dashboard; show task details to confirm `OpenVAS Default` and `Full and fast`. See `CURRENT_STATUS.md`.
+5. **Member 2 - now present:** Live `M2-13`/`M2-14` show loaded feed versions and a dashboard without the sync warning; `M2-15` shows three Done tasks; all three `M2-16` captures confirm `OpenVAS Default / Full and fast`; `M2-17` shows services and loaded VT cache. `M2-12` is historical. Feeds were 4-7 days old, not today's latest.
 6. **Assignment ambiguity:** Task 1 says 'End-point Specific agents distributed vulnerability collection' while offering OpenVAS as a network-based agentless tool. Ask the lecturer whether this is separately required under Task 1, or belongs to Task 2. Do not claim Wazuh endpoint agent collection has been demonstrated under Task 1.
 
 ## Demonstration sequence

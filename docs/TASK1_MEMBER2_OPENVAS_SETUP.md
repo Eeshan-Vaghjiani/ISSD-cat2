@@ -2,6 +2,8 @@
 
 **Purpose:** Independent, authorized network scanner for the three existing endpoints. **Status (27 October evidence review):** Installed; targets/tasks and three completed scans are captured. The final dashboard still shows feeds syncing, so current new-scan readiness is **not established**. Commands below document the original build path, not instructions to reinstall the existing scanner.
 
+**Later live verification, 27 October:** Readiness is now captured: no feed-sync warning; VT cache finished loading; three Done tasks; all three policies verified as `OpenVAS Default / Full and fast`. Use `M2-13` through `M2-17` and `LIVE_CHECKS_2026-10-27.md`, not the historical `M2-12` warning. Recorded feeds are 4-7 days old; do not claim they were freshly downloaded today.
+
 ## Final explanation for Member 2
 
 Greenbone Community Edition runs in Docker Compose on `ISSD-CAT2-scanner` (`192.168.56.20`). OpenVAS executes remote vulnerability tests; feeds supply those tests and supporting security data. `gvmd` manages targets, tasks, stored findings and consolidated reports; PostgreSQL persists management data; the web interface presents them. This is the network VA management/correlation role, not Wazuh agent collection.

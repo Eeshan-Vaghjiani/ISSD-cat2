@@ -2,15 +2,15 @@
 
 **Project:** ISSD CAT 2, Task 2 (agent-based distributed vulnerability assessment)  
 **Updated:** 27 October 2026 from later private evidence (26 October captures).  
-**Status:** All three installed agents are enrolled and active in manager evidence. Direct local service captures and a fresh live health check remain outstanding. See `CURRENT_STATUS.md` for exact capture instructions.
+**Status:** All three agents were active in the earlier manager evidence. Direct running-service screenshots were collected from all three guests on 27 October. See `LIVE_CHECKS_2026-10-27.md`; these are dated observations, not a claim of continuous uptime.
 
 ## 1. Installed endpoint inventory
 
 | VM | Verified hostname | OS | Host-only address | Agent package | Installation | Service status |
 |---|---|---|---|---|---|---|
-| ISSD-CAT2-ubuntu | `issd-ubuntu` | Ubuntu Server 24.04.3 LTS | `192.168.56.11` | Wazuh Agent `4.14.9-1` | Installed | Agent 001 active in manager; direct local service capture pending |
-| ISSD-CAT2-debian | `issd-debian` | Debian 12 (Bookworm) | `192.168.56.12` | Wazuh Agent `4.14.9-1` | Installed | Agent 002 active in manager; direct local service capture pending |
-| ISSD-CAT2-windows | `ISSD-CAT2-windo` | Windows 11 Enterprise Evaluation | `192.168.56.13` | Wazuh Agent `4.14.9` | Installed | Agent 003 active in manager; direct local service capture pending |
+| ISSD-CAT2-ubuntu | `issd-ubuntu` | Ubuntu Server 24.04.3 LTS | `192.168.56.11` | Wazuh Agent `4.14.9-1` | Installed | Active (running), 27 October guest-console capture M4-12 |
+| ISSD-CAT2-debian | `issd-debian` | Debian 12 (Bookworm) | `192.168.56.12` | Wazuh Agent `4.14.9-1` | Installed | Active (running), 27 October guest-console capture M4-13 |
+| ISSD-CAT2-windows | `ISSD-CAT2-windo` | Windows 11 Enterprise Evaluation | `192.168.56.13` | Wazuh Agent `4.14.9` | Installed | WazuhSvc Running, 27 October guest-console capture M4-14 |
 
 Ubuntu and Debian are managed by Vagrant from `E:\ISSD_CAT2` on the host. Windows runs as a manually created VirtualBox VM. Each endpoint has a host-only adapter in `192.168.56.0/24` and a NAT adapter for outbound traffic.
 
@@ -61,7 +61,7 @@ Do not place API keys, credentials, or enrollment secrets in GitHub or shared ev
 - Existing manager enrollment is evidenced; do not replace it with placeholders.
 - Capture each local service as `active (running)` / `Running`; report any real failures before changing configuration.
 - Reconfirm agent IDs 001/002/003 and current last-seen timestamps in the dashboard during rehearsal.
-- Inventory now records active manager evidence separately from the pending direct local-service screenshots. Add those filenames only after capture.
+- Inventory now references all three real direct local-service screenshots (M4-12, M4-13, M4-14), separately from historical manager check-in evidence.
 - Deliver evidence to Members 5 and 6 for vulnerability detection and final presentation.
 
 ## 6. Lecturer explanation

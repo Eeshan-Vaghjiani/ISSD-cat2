@@ -10,6 +10,8 @@ Agents report to `issd-local-worker` at `.30`. The worker connects privately ove
 
 Syscollector provides installed software/OS inventory; Wazuh vulnerability detection correlates that inventory with vulnerability intelligence. This is **not exploitation**, nor a remote port scan. Cluster registration synchronization, Filebeat event forwarding and vulnerability inventory indexing are separate paths. The Filebeat TLS test to a loopback relay alone does not prove the relay's cloud destination.
 
+**27 October live follow-up:** The relay route and TLS output were inspected directly; master/worker logs demonstrate group exchange. A uniquely marked benign Debian sudo/logger event was processed on the worker and retrieved from the cloud alert index. Worker clock skew was corrected by enabling and verifying NTP, then the test repeated. See `LIVE_CHECKS_2026-10-27.md`. This administrative test is **not** a vulnerability finding and does not alter the historical counts below.
+
 ## Observed results
 
 | Global dashboard category | Records |
@@ -43,11 +45,11 @@ Ubuntu's SCA score was 49% (118 passed / 119 failed / 42 not applicable); Debian
 
 The vendor advisory describes a heap buffer overflow in RainerScript `replace()` that can cause denial of service. Ubuntu's advisory, checked 27 October 2026, lists the Ubuntu 24.04 fix as **8.2312.0-3ubuntu9.4**. Review exposure, apply a supported security update and refresh inventory to verify remediation. No patch was applied during this review.
 
-### Debian - reported example awaiting endpoint evidence
+### Debian - endpoint inventory example now verified
 
-The older drafts claim **libexpat1 2.5.0-1+deb12u2 / CVE-2026-93990 / High** on agent 002. The supplied `M6-08_Debian_CVE_Record.png` is a public advisory, and `M6-07_Debian_CVE_Details.png` is an endpoint overview. Neither links that package/version/CVE to Debian in a vulnerability Inventory row. **Do not present this endpoint-specific example as verified yet.**
+The 27 October live dashboard check filtered **agent.id 002** and **CVE-2026-93990** and returned one Inventory row linking **issd-debian / libexpat1 / 2.5.0-1+deb12u2 / High**. This is captured in `Member6/M6-09_Debian_Endpoint_CVE_Inventory.png`. It verifies Wazuh's stored endpoint correlation, not exploitation or a fresh software collection while the guest was offline. The older advisory and endpoint-overview screenshots alone were insufficient.
 
-The Debian tracker, checked 27 October 2026, lists bookworm `2.5.0-1+deb12u2` as vulnerable, with fixed-version metadata `2.5.0-1+deb12u4` and the security repository at `2.5.0-1+deb12u5`. That validates vendor patch information, not the guest's installed package or Wazuh detection. Obtain `M6-09_Debian_Endpoint_CVE_Inventory.png` as described in `CURRENT_STATUS.md`; then confirm the actual installed version and current supported security candidate before remediation.
+The Debian tracker, checked 27 October 2026, lists bookworm `2.5.0-1+deb12u2` as vulnerable, with fixed-version metadata `2.5.0-1+deb12u4` and the security repository at `2.5.0-1+deb12u5`. That supplies vendor patch information separately from Wazuh detection. Confirm the current guest package and supported security candidate before remediation; no patch/retest is claimed here.
 
 ### Windows
 
@@ -78,6 +80,7 @@ Prioritize default SSH credential exposure without breaking authorized Vagrant/k
 | Member6/M6-07_Debian_CVE_Details.png | Debian endpoint overview and SCA |
 | Member6/M6-08_Ubuntu_CVE_Record.png | Public Ubuntu CVE advisory, not endpoint record |
 | Member6/M6-08_Debian_CVE_Record.png | Public Debian CVE advisory, not endpoint record |
+| Member6/M6-09_Debian_Endpoint_CVE_Inventory.png | Live 27 October dashboard retrieval: actual Debian package/version/CVE/severity row |
 | Member4/M4-07_Three_Active_Endpoint_Agents.png | Three active agents on local worker |
 | Member5/M5-11_Wazuh_Master_Worker_Connected.png | Master/worker names and versions |
 | Member5/M5-12_Cluster_Synchronization_Health.png | Integrity check/keepalive; other sync fields n/a |
@@ -85,6 +88,13 @@ Prioritize default SSH credential exposure without breaking authorized Vagrant/k
 | Member5/M5-13_Worker_Filebeat_Cloud_Indexer_Connected-2.png | Filebeat active and successful TLS output to loopback relay |
 | Member5/M5-14_Agent_Registration_Synced_Cloud.png | Cloud agent registration/active state |
 | Member5/M5-15_Cloud_Vulnerability_Indexer_Healthy.png | Actual Ubuntu package/CVE Inventory rows |
+| Member5/M5-16_Fresh_Cluster_Sync.png | Fresh local-worker group exchange and keepalive logs |
+| Member5/M5-16_Cloud_Cluster_Live_Transcript.txt | Corresponding real cloud-master cluster output |
+| Member5/M5-18_Relay_Route_Redacted.png | Intended cloud indexer route plus certificate-verified Filebeat output |
+| Member5/M5-17_Local_To_Cloud_Receipt.png | Benign Debian test event retrieved from the actual cloud alert index |
+| Member5/M5-17_Worker_Endpoint_Test_Event.jsonl | Actual corresponding worker alert records, including the synchronized repeat |
+| Member5/M5-17_Debian_Test_Event_Source.png | Real source journal entry for the benign endpoint test |
+| Member5/M5-21_Worker_Time_Sync_And_Agent002.png | Worker NTP synchronized and agent 002 active at capture |
 
 Remaining evidence and live-demo requirements: `CURRENT_STATUS.md`. Original private screenshots and drafts are preserved; do not publish them with credentials or infrastructure details.
 
